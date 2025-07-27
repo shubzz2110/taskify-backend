@@ -5,6 +5,6 @@ import registerUser from "../controllers/auth/register";
 
 const router = express.Router();
 
-router.post('/register', validate(registerUserSchema), registerUser)
+router.post("/register", validate({ body: registerUserSchema }), registerUser);
 
 export default router;
