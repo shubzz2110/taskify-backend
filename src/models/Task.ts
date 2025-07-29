@@ -13,6 +13,7 @@ export interface ITask extends Document {
   createdBy: ObjectId;
   section: ObjectId;
   board: ObjectId;
+  position: number;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -28,7 +29,8 @@ const TaskSchema = new mongoose.Schema<ITask>({
   attachments: { type: Array, default: [] },
   isCompleted: { type: Boolean, default: false },
   section: { type: mongoose.Schema.Types.ObjectId, ref: "Section", required: true },
-  board: { type: mongoose.Schema.Types.ObjectId, ref: "Board", required: true }
+  board: { type: mongoose.Schema.Types.ObjectId, ref: "Board", required: true },
+  position: { type: Number, required: true }
 }, { timestamps: true })
 
 const Task = mongoose.model("Task", TaskSchema);

@@ -16,6 +16,8 @@ const createTask = async (req: Request, res: Response) => {
       board,
     } = req.body;
 
+    const count = await Task.countDocuments({ section });
+
     const task = await Task.create({
       title,
       description,
@@ -27,6 +29,7 @@ const createTask = async (req: Request, res: Response) => {
       createdBy,
       section,
       board,
+      position: count,
     });
     return res.status(200).json({ task });
   } catch (error) {
