@@ -34,7 +34,6 @@ const createBoard = async (req: Request, res: Response) => {
             difficulty: task.difficulty,
             priority: task.priority,
             attachments: task.attachments || [],
-            completedBy: task.completedBy,
             createdBy: task.createdBy,
             section: sectionDoc._id,
             board: board._id,
