@@ -8,11 +8,11 @@ import cookieParser from "cookie-parser";
 import connectToDatabase from "./config/db";
 import connectToFirebase from "./config/firebase";
 
-import authRoutes from './routes/auth'
-import userRoutes from './routes/user'
-import sectionRoutes from './routes/section'
-import taskRoutes from './routes/task'
-import boardRoutes from './routes/board'
+import authRoutes from "./routes/auth";
+import userRoutes from "./routes/user";
+import sectionRoutes from "./routes/section";
+import taskRoutes from "./routes/task";
+import boardRoutes from "./routes/board";
 
 const PORT = config.port || 5000;
 
@@ -28,6 +28,7 @@ app.use(
       "http://localhost:3000",
       "http://localhost:5000",
       "https://taskify-backend-aq8n.onrender.com",
+      "https://taskify-frontend-az4c.onrender.com/",
     ],
   })
 );
@@ -38,14 +39,14 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 // Routes
-app.use('/api/auth', authRoutes);
-app.use('/api/user', userRoutes);
-app.use('/api/section', sectionRoutes);
-app.use('/api/board', boardRoutes);
-app.use('/api/task', taskRoutes);
+app.use("/api/auth", authRoutes);
+app.use("/api/user", userRoutes);
+app.use("/api/section", sectionRoutes);
+app.use("/api/board", boardRoutes);
+app.use("/api/task", taskRoutes);
 
 server.listen(PORT, () => {
   connectToDatabase();
-  connectToFirebase()
+  connectToFirebase();
   console.log(`Server running on http://localhost:${PORT}`);
 });
