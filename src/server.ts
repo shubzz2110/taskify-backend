@@ -28,7 +28,7 @@ app.use(
       "http://localhost:3000",
       "http://localhost:5000",
       "https://taskify-backend-aq8n.onrender.com",
-      "https://taskify-frontend-az4c.onrender.com/",
+      "https://taskify-frontend-az4c.onrender.com",
     ],
   })
 );
