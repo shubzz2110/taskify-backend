@@ -4,7 +4,7 @@ import Counter from "./Counter";
 export interface ITask extends Document {
   title: string;
   description?: string;
-  assignedTo?: ObjectId;
+  assignedTo?: ObjectId | null;
   dueDate?: Date;
   difficulty: "low" | "medium" | "hard";
   priority: "low" | "medium" | "high";
